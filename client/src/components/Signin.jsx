@@ -44,38 +44,35 @@ export default function Signin({ setIsLoggedIn }) {
   };
 
   return (
-    <>
-      <h1 className="signup-header">Sign-in</h1>
+    <div className="signup-page">
+      <h1 className="signup-header">Sign In</h1>
+
       <form className="signup-form" onSubmit={handleSubmit}>
-        <label className="signup-label" htmlFor="email">
-          Email
-        </label>
+        <label className="signup-label">Email</label>
         <input
           type="email"
-          className="email"
           onChange={handleEmail}
-          placeholder="Enter the email:"
+          placeholder="Enter your email"
         />
-        <label className="signup-label" htmlFor="password">
-          Password
-        </label>
+
+        <label className="signup-label">Password</label>
         <input
           type="password"
-          className="password"
           onChange={handlePassword}
-          placeholder="Enter the password:"
+          placeholder="Enter your password"
         />
+
         <button className="submit" type="submit">
-          Submit
+          Sign In
         </button>
       </form>
 
-      <p style={{ textAlign: "center", marginTop: "1rem" }}>
-        Don't have an account? <Link to="/signup">Sign up</Link>
+      <p>
+        Don&apos;t have an account? <Link to="/signup">Sign up</Link>
       </p>
 
       {success && <p className="success-message">{success}</p>}
       {error && <p className="error-message">{error}</p>}
-    </>
+    </div>
   );
 }

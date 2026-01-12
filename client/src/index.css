@@ -1,88 +1,105 @@
-/* Reset */
+/* ========================= */
+/* RESET & BASE              */
+/* ========================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Page container */
+html,
 body {
+  height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: var(--background);
   color: var(--font-color);
-  min-height: 100vh;
-  transition: background 0.3s, color 0.3s;
-  padding: 1rem; /* Add some general padding */
+  line-height: 1.5;
 }
+
+/* ========================= */
+/* GLOBAL LAYOUT             */
+/* ========================= */
 
 .main-content-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 2rem); /* Adjust for body padding */
+  min-height: 100vh;
+  padding: 1rem;
 }
 
-/* Signup card */
+/* ========================= */
+/* AUTH PAGES (SIGN IN / UP) */
+/* ========================= */
+
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.signup-header {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--font-color);
+}
+
+/* Auth card */
 .signup-form {
-  background: var(--card-background);
-  padding: 2rem 2.5rem;
   width: 100%;
   max-width: 380px;
-  border-radius: 12px;
+  background: var(--card-background);
+  padding: 2rem;
+  border-radius: 14px;
   box-shadow: var(--card-shadow);
-  transition: background 0.3s, box-shadow 0.3s;
-}
-
-/* Heading */
-.signup-header {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: var(--font-color);
 }
 
 /* Labels */
 .signup-label {
   display: block;
   margin-bottom: 0.4rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-secondary);
 }
 
 /* Inputs */
-.name,
-.email,
-.password {
+.signup-form input {
   width: 100%;
-  padding: 0.7rem 0.9rem;
+  min-height: 44px;
+  padding: 0.8rem 1rem;
   margin-bottom: 1.2rem;
+  border-radius: 10px;
   border: 1px solid var(--input-border);
-  background-color: var(--card-background);
+  background: var(--card-background);
   color: var(--font-color);
-  border-radius: 6px;
-  font-size: 0.95rem;
-  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+  font-size: 1rem;
 }
 
-.name:focus,
-.email:focus,
-.password:focus {
+.signup-form input:focus {
   outline: none;
   border-color: var(--input-focus-border);
   box-shadow: 0 0 0 2px var(--input-focus-shadow);
 }
 
-/* Button */
+/* Primary button */
 .submit {
   width: 100%;
-  padding: 0.75rem;
+  min-height: 48px;
+  border-radius: 12px;
+  border: none;
   background: var(--button-background);
   color: var(--button-text-color);
-  border: none;
-  border-radius: 6px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s, transform 0.1s;
+  transition: background 0.2s, transform 0.1s;
 }
 
 .submit:hover {
@@ -93,189 +110,140 @@ body {
   transform: scale(0.98);
 }
 
-/* Mobile responsiveness */
-@media (max-width: 600px) {
-  body {
-    padding: 0.5rem; /* Less padding on very small screens */
-  }
-
-  .main-content-wrapper {
-    min-height: calc(100vh - 1rem); /* Adjust for body padding */
-  }
-
-  .signup-form,
-  .tasks-container {
-    padding: 1.5rem;
-    width: 95%; /* Take up more width on small screens */
-    max-width: none; /* Remove max-width constraint */
-  }
-
-  .tasks-container form {
-    flex-direction: column; /* Stack input and button */
-    gap: 0.8rem;
-  }
-
-  .tasks-container li {
-    flex-direction: column; /* Stack task title and delete button */
-    align-items: flex-start;
-    padding: 0.75rem;
-    gap: 0.5rem;
-  }
-
-  .tasks-container li span {
-    word-break: break-word; /* Ensure long task names wrap */
-  }
-
-  .tasks-header {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    padding-bottom: 0.8rem;
-    margin-bottom: 1rem;
-  }
-
-  .tasks-container h1.tasks-title {
-    text-align: center;
-  }
+/* Auth links */
+.signup-page p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
 }
 
+.signup-page a {
+  color: var(--button-background);
+  font-weight: 600;
+  text-decoration: none;
+}
 
-/* Success & Error Messages */
+.signup-page a:hover {
+  text-decoration: underline;
+}
+
+/* ========================= */
+/* FEEDBACK MESSAGES         */
+/* ========================= */
+
 .success-message,
 .error-message {
   margin-top: 1rem;
   padding: 0.75rem 1rem;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 0.9rem;
   font-weight: 600;
   text-align: center;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-/* Success */
 .success-message {
-  background-color: var(--success-bg);
+  background: var(--success-bg);
   color: var(--success-text);
   border: 1px solid var(--success-border);
 }
 
-/* Error */
 .error-message {
-  background-color: var(--error-bg);
+  background: var(--error-bg);
   color: var(--error-text);
   border: 1px solid var(--error-border);
 }
+
 /* ========================= */
-/* Task Manager Page Styles  */
+/* TASKS PAGE                */
 /* ========================= */
 
-/* Task container */
 .tasks-container {
+  max-width: 640px;
+  margin: 0 auto;
   background: var(--card-background);
-  padding: 2rem;
-  width: 100%;
-  max-width: 450px;
-  border-radius: 12px;
+  padding: 1.25rem;
+  border-radius: 14px;
   box-shadow: var(--card-shadow);
-  transition: background 0.3s, box-shadow 0.3s;
 }
 
-/* Task header */
+/* Header */
 .tasks-header {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline; /* Changed for better alignment with text link */
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
   border-bottom: 1px solid var(--input-border);
-  padding-bottom: 1rem;
-  margin-bottom: 1.5rem; /* Added margin for spacing */
+  padding-bottom: 0.75rem;
 }
 
-.tasks-container h1 { /* Keep existing h1 styles for consistency */
-  text-align: center;
-  color: var(--font-color);
+.tasks-title {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
-/* Logout link style */
-.tasks-container .logout-link {
-  background: none !important;
+.logout-link {
+  background: none;
   border: none;
-  padding: 0 !important;
-  color: var(--button-background); /* Use the theme's primary color */
-  font-size: 0.9rem;
+  color: var(--button-background);
   font-weight: 600;
   cursor: pointer;
-  text-decoration: none;
-  transition: text-decoration 0.2s, color 0.3s;
 }
 
-.tasks-container .logout-link:hover {
-  text-decoration: underline;
-}
-
-/* Task form */
+/* Add task form */
 .tasks-container form {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
 }
 
-/* Task input */
 .tasks-container input[type="text"] {
-  flex: 1;
-  padding: 0.7rem 0.9rem;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
   border: 1px solid var(--input-border);
-  background-color: var(--card-background);
+  background: var(--card-background);
   color: var(--font-color);
-  border-radius: 6px;
-  font-size: 0.95rem;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  font-size: 1rem;
 }
 
-.tasks-container input[type="text"]:focus {
-  outline: none;
-  border-color: var(--input-focus-border);
-}
-
-/* Add button */
 .tasks-container button {
-  padding: 0.7rem 1rem;
+  min-height: 44px;
+  border-radius: 10px;
+  border: none;
   background: var(--button-background);
   color: var(--button-text-color);
-  border: none;
-  border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
-}
-
-.tasks-container button:hover {
-  background: var(--button-hover);
 }
 
 /* Task list */
 .tasks-container ol {
   list-style: none;
-  padding: 0;
 }
 
-/* Task item */
 .tasks-container li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 1rem;
-  margin-bottom: 0.6rem;
   background: var(--task-item-bg);
   border: 1px solid var(--task-item-border);
-  border-radius: 6px;
-  transition: background-color 0.3s, border-color 0.3s;
+  border-radius: 12px;
+  padding: 0.9rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tasks-container li span {
+  word-break: break-word;
 }
 
 /* Delete button */
 .tasks-container li button {
+  align-self: flex-end;
   background: var(--danger-color);
   font-size: 0.85rem;
-  padding: 0.4rem 0.6rem;
+  padding: 0.4rem 0.75rem;
 }
 
 .tasks-container li button:hover {
@@ -285,6 +253,31 @@ body {
 /* Empty state */
 .tasks-container p {
   text-align: center;
-  font-weight: 600;
   color: var(--text-tertiary);
+  font-weight: 600;
+}
+
+/* ========================= */
+/* DESKTOP ENHANCEMENTS      */
+/* ========================= */
+
+@media (min-width: 768px) {
+  .tasks-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .tasks-container form {
+    flex-direction: row;
+  }
+
+  .tasks-container li {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .tasks-container li button {
+    align-self: center;
+  }
 }

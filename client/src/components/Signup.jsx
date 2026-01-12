@@ -44,9 +44,9 @@ export default function Signup() {
   };
 
   return (
-    <>
+    <div className="signup-page">
       <h1 className="signup-header">Create Account</h1>
-      <form id="signup-form" onSubmit={handleSubmit}>
+      <form className="signup-form" onSubmit={handleSubmit}>
         <label className="signup-label" htmlFor="name">
           Name
         </label>
@@ -85,6 +85,6 @@ export default function Signup() {
 
       {success && <p className="success-message">{success}</p>}
       {error && <p className="error-message">{error}</p>}
-    </>
+    </div>
   );
 }
