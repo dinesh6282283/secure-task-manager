@@ -1,4 +1,5 @@
-const BACKEND_URL = "http://localhost:5000/api";
+const BACKEND_URL =
+  import.meta.env.VITE_BACKEND_URL || "http://localhost:5000/api";
 
 const handleResponse = async (response) => {
   const data = await response.json();
@@ -33,5 +34,3 @@ export const deleteTask = (taskId) => {
     headers: getAuthHeaders(),
   }).then(handleResponse);
 };
-
-
