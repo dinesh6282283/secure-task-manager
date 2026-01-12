@@ -15,7 +15,6 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://secure-task-manager-1.onrender.com/api",
       "https://secure-task-manager-phi.vercel.app/",
     ],
     credentials: true,
