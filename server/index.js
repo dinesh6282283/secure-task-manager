@@ -17,9 +17,11 @@ app.use(
       "http://localhost:5173",
       "https://secure-task-manager-phi.vercel.app",
     ],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     credentials: true,
   })
 );
+app.options("*", cors());
 
 //routes
 app.use("/api/auth", authRoute);
