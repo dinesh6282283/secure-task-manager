@@ -13,7 +13,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://secure-task-manager.vercel.app"],
+    origin: [
+      "http://localhost:5173",
+      "https://secure-task-manager-1.onrender.com/api",
+    ],
     credentials: true,
   })
 );
