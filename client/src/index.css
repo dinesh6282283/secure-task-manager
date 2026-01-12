@@ -256,6 +256,14 @@ body {
   color: var(--text-tertiary);
   font-weight: 600;
 }
+/* Tasks page layout */
+.tasks-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
 
 /* ========================= */
 /* DESKTOP ENHANCEMENTS      */

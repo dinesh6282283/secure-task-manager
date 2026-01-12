@@ -1,6 +1,10 @@
 import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { getTasks, createTask, deleteTask as apiDeleteTask } from "../api/tasks";
+import {
+  getTasks,
+  createTask,
+  deleteTask as apiDeleteTask,
+} from "../api/tasks";
 
 const Header = ({ onLogout }) => (
   <div className="tasks-header">
@@ -92,19 +96,23 @@ export default function Tasks({ setIsLoggedIn }) {
   };
 
   return (
-    <div className="tasks-container">
-      <Header onLogout={handleLogout} />
-      <form onSubmit={addTask}>
-        <input
-          type="text"
-          placeholder="New Task"
-          value={newTask}
-          onChange={(e) => setNewTask(e.target.value)}
-        />
-        <button type="submit">Add Task</button>
-      </form>
-      {error && <p className="error-message">{error}</p>}
-      <TaskList tasks={tasks} onDelete={deleteTask} />
+    <div className="tasks-page">
+      <div className="tasks-container">
+        <Header onLogout={handleLogout} />
+
+        <form onSubmit={addTask}>
+          <input
+            type="text"
+            placeholder="New Task"
+            value={newTask}
+            onChange={(e) => setNewTask(e.target.value)}
+          />
+          <button type="submit">Add Task</button>
+        </form>
+
+        {error && <p className="error-message">{error}</p>}
+        <TaskList tasks={tasks} onDelete={deleteTask} />
+      </div>
     </div>
   );
 }
