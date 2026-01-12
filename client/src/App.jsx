@@ -16,23 +16,25 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={<Signin setIsLoggedIn={setIsLoggedIn} />}
-        />
-        <Route path="/signup" element={<Signup />} />
-        <Route
-          path="/tasks"
-          element={
-            isLoggedIn ? (
-              <Tasks setIsLoggedIn={setIsLoggedIn} />
-            ) : (
-              <Navigate to="/" />
-            )
-          }
-        />
-      </Routes>
+      <div className="main-content-wrapper">
+        <Routes>
+          <Route
+            path="/"
+            element={<Signin setIsLoggedIn={setIsLoggedIn} />}
+          />
+          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/tasks"
+            element={
+              isLoggedIn ? (
+                <Tasks setIsLoggedIn={setIsLoggedIn} />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
