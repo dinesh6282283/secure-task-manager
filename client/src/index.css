@@ -207,7 +207,8 @@ body {
   font-size: 1rem;
 }
 
-.tasks-container button {
+/* Primary buttons (Add Task) */
+.tasks-container > form button {
   min-height: 44px;
   border-radius: 10px;
   border: none;
@@ -241,8 +242,12 @@ body {
 .tasks-container li button {
   align-self: flex-end;
   background: var(--danger-color);
+  color: white;
+  border-radius: 8px;
+  border: none;
+  padding: 0.5rem 0.9rem;
   font-size: 0.85rem;
-  padding: 0.4rem 0.75rem;
+  min-height: unset;
 }
 
 .tasks-container li button:hover {
