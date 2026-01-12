@@ -1,0 +1,24 @@
+:root {
+  --font-color: #e0e0e0;
+  --background: #121212;
+  --card-background: #1e1e1e;
+  --button-background: #764ba2;
+  --button-hover: #663a99;
+  --button-text-color: #fff;
+  --input-border: #444;
+  --input-focus-border: #764ba2;
+  --input-focus-shadow: rgba(118, 75, 162, 0.3);
+  --danger-color: #ef4444;
+  --danger-hover: #dc2626;
+  --card-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  --text-secondary: #aaa;
+  --text-tertiary: #888;
+  --success-bg: #1a3c3d;
+  --success-text: #5eead4;
+  --success-border: #2dd4bf;
+  --error-bg: #4d1c1c;
+  --error-text: #fca5a5;
+  --error-border: #f87171;
+  --task-item-bg: #2a2a2a;
+  --task-item-border: #444;
+}
